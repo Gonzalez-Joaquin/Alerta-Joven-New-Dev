@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ESNext", // Necesito "es20162"
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "ESNext",
+    "module": "ESNext", // Necesito commonjs
     "skipLibCheck": true,
+    "outDir": "./build",
     /* Bundler mode */
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

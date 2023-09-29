@@ -14,7 +14,7 @@ class App {
         this.Routes()
     }
 
-    Settings() { this.App.set('port', this.PORT || process.env.PORT || 7777) }
+    Settings() { this.App.set('port', this.PORT || process.env.PORT || 3000) }
 
     MiddleWares() {
         this.App.use(express.json())
