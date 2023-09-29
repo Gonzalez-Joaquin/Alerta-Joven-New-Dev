@@ -1,7 +1,34 @@
+import { BrowserRouter, Navigate, Route } from "react-router-dom"
+import { Suspense, lazy } from "react"
+import { Provider } from "react-redux"
+
+import { PublicRoutes, PrivateRoutes } from "./model/routes"
+import { RoutesWithNotFound } from "./utils"
+import AuthGuard from "./guard/auth.guard"
+import store from './redux/store'
+
+import styles from './styles/app.module.css'
+
+const Loading = lazy(() => import('./pages/loading/Loading'))
+const Public = lazy(() => import('./pages/public/public'))
+const Private = lazy(() => import('./pages/private/private'))
+
 const App = () => {
   return (
-    <main>
-      
+    <main className={`flex ${styles.main}`} >
+      <Suspense fallback={<Loading />}>
+        <Provider store={store}>
+          <BrowserRouter>
+            <RoutesWithNotFound>
+              <Route path="/" element={<Navigate to={PrivateRoutes.PRIVATE} />} />
+              <Route path={`${PublicRoutes.PUBLIC}/*`} element={<Public />} />
+              <Route element={<AuthGuard />}>
+                <Route path={`${PrivateRoutes.PRIVATE}/*`} element={<Private />} />
+              </Route>
+            </RoutesWithNotFound>
+          </BrowserRouter>
+        </Provider>
+      </Suspense>
     </main>
   )
 }

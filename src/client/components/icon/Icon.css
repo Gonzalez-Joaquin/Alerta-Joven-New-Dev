@@ -1,0 +1,43 @@
+.icon {
+  line-height: 0;
+}
+
+/* Style_Color */
+
+.icon-gris {
+  color: var(--fuente-3);
+}
+
+.icon-negro {
+  color: var(--fuente-1);
+}
+
+.icon-azul {
+  color: var(--color-primario);
+}
+
+.icon-rojo {
+  color: var(--error);
+}
+
+.icon-verde {
+  color: var(--succes);
+}
+
+/* Size */
+
+.icon-small {
+  font-size: 16px;
+}
+
+.icon-medium {
+  font-size: 21px;
+}
+
+.icon-large {
+  font-size: 30px;
+}
+
+.icon-auto {
+  font-size: 100%;
+}
