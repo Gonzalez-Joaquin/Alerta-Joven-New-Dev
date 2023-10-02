@@ -1,0 +1,14 @@
+.article {
+  width: 90%;
+  height: 100%;
+}
+
+.left {
+  max-width: calc(fit-content + 50px);
+  width: 100%;
+}
+
+.rigth {
+  max-width: max-content;
+  width: 100%;
+}

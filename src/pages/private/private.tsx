@@ -10,7 +10,7 @@ const Home = lazy(() => import('./Home/Home'))
 export const Private = () => {
     return (
         <>
-            <Layouts.header header_type="private" />
+            <Layouts.Header header_type="private" />
             <RoutesWithNotFound>
                 <Route path="/" element={<Navigate to={PrivateRoutes.HOME} />} />
                 <Route path={PrivateRoutes.HOME} element={<Home />} />

@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  outline: 0;
+  border: 1px solid var(--fuente-terciaria);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
+  transition: var(--transition-1);
+}
+
+.input:is(:hover, :active, :focus-visible) {
+  border-color: var(--primario);
+}

@@ -1,0 +1,1 @@
+export { default as normal_button } from './normal button/button'

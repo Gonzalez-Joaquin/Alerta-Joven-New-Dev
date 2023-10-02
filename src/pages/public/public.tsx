@@ -6,13 +6,13 @@ import { RoutesWithNotFound } from "../../utils"
 
 import { PublicRoutes } from "../../model/routes"
 
-const Welcome = lazy(() => import('./Welcome/Welcome'))
-const Login = lazy(() => import('./Login/Login'))
+const Welcome = lazy(() => import('./welcome/welcome'))
+const Login = lazy(() => import('./login/login'))
 
 export const Private = () => {
     return (
         <>
-            <Layouts.header header_type="public" />
+            <Layouts.Header header_type="public" />
             <RoutesWithNotFound>
                 <Route path="/" element={<Navigate to={PublicRoutes.WELCOME} />} />
                 <Route path={PublicRoutes.WELCOME} element={<Welcome />} />
