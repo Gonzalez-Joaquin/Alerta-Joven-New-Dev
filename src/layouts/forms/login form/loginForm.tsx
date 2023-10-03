@@ -12,8 +12,8 @@ const loginForm = () => {
     const dipatch = useDispatch()
     const navigate = useNavigate()
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('nahun@gmail.com')
+    const [password, setPassword] = useState('nahun123')
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -21,7 +21,7 @@ const loginForm = () => {
         const data = await loginWidthEmailAndPassword(email, password)
 
         dipatch(updateUser(data))
-        navigate('/')
+        navigate('/', { replace: true })
     }
 
     return (

@@ -1,0 +1,24 @@
+.card {
+  width: 100%;
+  padding-inline: 1em;
+  padding-block: 10px;
+  background: var(--terciario);
+  border-radius: 6px;
+  border: 1px solid #d8d8d8;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.text {
+  max-width: calc(100% - 30%);
+  width: 100%;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.button {
+  max-width: calc(100% - 70%);
+  width: 100%;
+  justify-content: flex-end;
+}

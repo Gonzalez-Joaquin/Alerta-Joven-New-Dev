@@ -9,7 +9,7 @@ interface Props {
 const button = ({ type, value }: Props) => {
     return (
         <button className={styles.button} type={type || 'button'}>
-            <Text type='h4' style_type='text-button' content={value} />
+            <Text type='h4' style_type='text-button' styles_color='text-terciario' content={value} />
         </button>
     )
 }

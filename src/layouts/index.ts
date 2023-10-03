@@ -1,2 +1,5 @@
 export { default as Header } from './header/header'
+export { default as recentActivity } from './recentActivity/recentActivity'
+export { default as newTrackings } from './newTrackings/newTrackings'
+export { default as historyTrakings } from './historyTrakings/historyTrakings'
 export * as Forms from './forms'

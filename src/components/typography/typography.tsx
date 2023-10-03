@@ -7,7 +7,7 @@ interface TextProps {
 
     style_type: 'text-title' | 'text-subtitle' | 'text-p' | 'text-button',
 
-    styles_color?: 'text-primario' | 'text-secundario' | 'text-terciario' | 'text-color-primario',
+    styles_color?: 'text-primario' | 'text-secundario' | 'text-terciario' | 'text-color-primario' | 'text-color-secundario',
 
     style_transform?: 'text-uppercase' | 'text-capitalize',
 

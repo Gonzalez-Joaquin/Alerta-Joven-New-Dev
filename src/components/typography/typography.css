@@ -34,19 +34,23 @@
 /* ---- text-color ---- */
 
 .text-primario {
-  color: var(--fuente-1);
+  color: var(--fuente);
 }
 
 .text-secundario {
-  color: var(--fuente-2);
+  color: var(--fuente-secundaria);
 }
 
 .text-terciario {
-  color: var(--fuente-3);
+  color: var(--fuente-terciaria);
 }
 
 .text-color-primario {
-  color: var(--color-primario);
+  color: var(--primario);
+}
+
+.text-color-secundario {
+  color: var(--secundario);
 }
 
 /* ---- text-size ---- */
