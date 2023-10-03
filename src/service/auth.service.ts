@@ -1,9 +1,18 @@
-export const baseURL = 'https://rickandmortyapi.com/api/'
+import axios from 'axios'
 
-const tempCharacter = baseURL + 'character/'
+const baseURL = 'http://localhost:5000/'
 
-export const getMorty = () => {
-    return fetch(tempCharacter + '2').then(res => res.json())
+const loginUrl = baseURL + 'users/login'
+
+export const loginWidthEmailAndPassword = async (email: string, password: string) => {
+    try {
+        const response = await axios.post(loginUrl, { email, password })
+
+        return response.data
+    }
+    catch (Error: any) {
+        alert(Error.message)
+    }
 }
 
-export default getMorty
+export default loginWidthEmailAndPassword

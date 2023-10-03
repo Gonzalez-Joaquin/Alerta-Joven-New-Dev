@@ -1,13 +1,14 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import * as Components from '../../components'
-
 
 import StylesPrivate from './privateHeader.module.css'
 import StylesPublic from './publicHeader.module.css'
 import StylesHeader from './header.module.css'
 
 import { PublicRoutes } from '../../model/routes'
+import { resetUser } from '../../redux/slices/user.slice'
 
 const Public = () => {
     return (
@@ -34,9 +35,15 @@ const Public = () => {
 }
 
 const Private = () => {
+
+    const dispatch = useDispatch()
+
     return (
         <div className={StylesPrivate.container}>
             este es el header privado
+            <Link to={PublicRoutes.PUBLIC} onClick={() => dispatch(resetUser())} className={StylesPublic.link}>
+                Cerrar sesión
+            </Link>
         </div>
     )
 }

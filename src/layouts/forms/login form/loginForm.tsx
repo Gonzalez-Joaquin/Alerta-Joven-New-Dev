@@ -1,22 +1,33 @@
 import { useState } from 'react'
-import * as Components from '../../../components'
+import loginWidthEmailAndPassword from '../../../service/auth.service'
 
+import * as Components from '../../../components'
 import styles from './login_form.module.css'
+import { useDispatch } from 'react-redux'
+import { updateUser } from '../../../redux/slices/user.slice'
+import { useNavigate } from 'react-router-dom'
 
 const loginForm = () => {
 
-    const [username, setUsername] = useState('')
+    const dipatch = useDispatch()
+    const navigate = useNavigate()
+
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        alert('submit' + username + password)
+
+        const data = await loginWidthEmailAndPassword(email, password)
+
+        dipatch(updateUser(data))
+        navigate('/')
     }
 
     return (
         <form className={`flex ${styles.form}`} onSubmit={handleSubmit}>
             <Components.text type='h4' style_type='text-button' content='Iniciar sesión' size='text-pre-medium' />
-            <Components.input name='username' placeholder='Nombre de usuario' newValue={e => setUsername(e)} />
+            <Components.input type='email' name='email' placeholder='Email' newValue={e => setEmail(e)} />
             <Components.input name='password' placeholder='Contraseña' type='password' newValue={e => setPassword(e)} />
             <Components.buttons.normal_button value='iniciar' type='submit' />
         </form>

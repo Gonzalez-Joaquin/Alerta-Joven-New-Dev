@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { user_model } from "../../model/user.model";
+import { Permissions, user_model } from "../../model/user.model";
 
-const EmptyUserState: user_model = { id: 0, name: '', password: '', username: '' }
+const EmptyUserState: user_model = { id: 0, name: '', credentials: 0, email: '', password: '', permissions: Permissions.Admin }
 
 const persistLocalStorageUserState = (user: user_model) => {
     localStorage.setItem('user', JSON.stringify({ ...user }))
