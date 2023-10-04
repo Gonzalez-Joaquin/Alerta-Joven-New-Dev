@@ -4,19 +4,19 @@
 }
 
 .article {
-  max-width: calc(100% - 40%);
+  max-width: calc(100% - 30%);
   width: 100%;
   min-width: 500px;
   height: 100%;
   padding-block: 1%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 5px;
   justify-content: flex-start;
 }
 
 .aside {
-  max-width: calc(100% - 60%);
+  max-width: calc(100% - 70%);
   width: 100%;
   min-width: 300px;
   height: 100%;
@@ -24,6 +24,12 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
+}
+
+.top {
+  max-width: calc(100% - 5%);
+  width: 100%;
+  justify-content: space-between;
 }
 
 .containerButton {

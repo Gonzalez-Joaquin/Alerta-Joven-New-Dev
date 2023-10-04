@@ -49,12 +49,6 @@ const Private = () => {
                             Inicio
                         </NavLink>
                     </li>
-                    <li className={StylesPublic.li}>
-                        <NavLink to={PrivateRoutes.SEARCH}
-                            className={({ isActive }) => (isActive ? StylesPublic.active : StylesPublic.link)}>
-                            Busqueda
-                        </NavLink>
-                    </li>
                     {permissions === Permissions.Admin && (
                         <li className={StylesPublic.li}>
                             <NavLink to={PrivateRoutes.DASHBOARD}
@@ -71,7 +65,7 @@ const Private = () => {
                     </li>
                 </ul>
             </nav>
-            <Link to={PublicRoutes.PUBLIC} replace={true} onClick={() => dispatch(resetUser())} className={StylesPublic.link}>
+            <Link to={`/${PublicRoutes.PUBLIC}`} onClick={() => dispatch(resetUser())} className={StylesPublic.link}>
                 Cerrar sesión
             </Link>
         </div>

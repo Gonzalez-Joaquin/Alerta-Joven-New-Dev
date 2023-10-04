@@ -29,7 +29,7 @@ const loginForm = () => {
             <Components.text type='h4' style_type='text-button' content='Iniciar sesión' size='text-pre-medium' />
             <Components.input type='email' name='email' placeholder='Email' newValue={e => setEmail(e)} />
             <Components.input name='password' placeholder='Contraseña' type='password' newValue={e => setPassword(e)} />
-            <Components.buttons.normal_button value='iniciar' type='submit' />
+            <Components.button value='iniciar' type='submit' />
         </form>
     )
 }

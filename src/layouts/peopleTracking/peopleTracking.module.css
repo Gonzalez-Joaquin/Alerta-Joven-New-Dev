@@ -1,0 +1,20 @@
+.container {
+  width: calc(100% - 5%);
+  height: 100%;
+}
+
+.table {
+  width: 100%;
+  max-height: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--terciario);
+  border: 1px solid #d8d8d8;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.thead {
+  width: 90%;
+  background: var(--terciario);
+}

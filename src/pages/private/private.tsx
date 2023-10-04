@@ -10,6 +10,8 @@ import { AppDisptach } from "../../redux/store"
 import fetchIndividuals from "../../redux/slices/individuals/thunk"
 
 const Home = lazy(() => import('./home/home'))
+const Help = lazy(() => import('./help/help'))
+const Preview = lazy(() => import('./peview/preview'))
 
 export const Private = () => {
 
@@ -25,6 +27,8 @@ export const Private = () => {
             <RoutesWithNotFound>
                 <Route path="/" element={<Navigate to={PrivateRoutes.HOME} />} />
                 <Route path={PrivateRoutes.HOME} element={<Home />} />
+                <Route path={PrivateRoutes.HELP} element={<Help />} />
+                <Route path={`${PrivateRoutes.PREVIEW}/:id`} element={<Preview />} />
             </RoutesWithNotFound>
         </>
     )

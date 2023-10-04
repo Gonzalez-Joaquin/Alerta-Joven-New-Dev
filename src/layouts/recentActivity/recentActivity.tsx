@@ -9,15 +9,17 @@ const recentActivity = () => {
 
     const { individuals, loading } = useSelector((store: RootState) => store.individuals)
 
+    const newArray = individuals.slice(0, 6)
+
     return (
         <div className={`flex ${styles.container}`}>
             {loading && (
                 <>
-                    loading individuals
+                    Loading...
                 </>
             )}
             {!loading && (
-                individuals.map(({ id, name, credential }) => <Components.cards.small individual={{ id, name, credential }} key={id} />)
+                newArray.map(({ id, name, credential }) => <Components.cards.small individual={{ id, name, credential }} key={id} />)
             )}
         </div>
     )

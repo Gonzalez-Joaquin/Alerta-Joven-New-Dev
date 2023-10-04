@@ -1,0 +1,69 @@
+.container {
+  position: relative;
+  max-width: 250px;
+  min-width: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+.input {
+  position: absolute;
+  right: 0;
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  outline: 0;
+  border: 1px solid var(--fuente-terciaria);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  transition: var(--transition-2);
+}
+
+.input:is(:hover, :active, :focus-visible) {
+  border-color: var(--primario);
+}
+
+.button {
+  position: absolute;
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  outline: 0;
+  border: 1px solid var(--fuente-terciaria);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    transition: var(--transition-2);
+}
+
+.button:is(:hover, :active, :focus) {
+  cursor: pointer;
+  border-color: var(--primario);
+}
+
+.active {
+  opacity: 1;
+  right: 16%;
+  width: 100%;
+  visibility: visible;
+}
+
+.inactive {
+  opacity: 0;
+  width: 20%;
+  visibility: hidden;
+}
+
+.icon {
+  padding: 0px;
+  line-height: 0;
+}
+
+.crossActive {
+  right: 0;
+  width: 100%;
+  max-width: 35px;
+}
+
+.crossInactive {
+  right: 0;
+  max-width: 50px;
+  width: 100%;
+}
