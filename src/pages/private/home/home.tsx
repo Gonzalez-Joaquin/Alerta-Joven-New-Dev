@@ -11,11 +11,17 @@ const Home = () => {
                     <Components.text type='h2' style_type='text-title' content='Seguimientos' size='text-pre-medium' styles_color='text-secundario' />
                     <Components.search />
                 </div>
-                <Layouts.peopleTracking />
+                <div className={`flex ${styles.bottom}`}>
+                    <Layouts.peopleTracking />
+                </div>
             </article>
             <aside className={`flex ${styles.aside}`}>
-                <Components.text type='h2' style_type='text-title' content='Actividad Reciente' size='text-pre-medium' styles_color='text-secundario' />
-                <Layouts.recentActivity />
+                <div className={`flex ${styles.top}`}>
+                    <Components.text type='h2' style_type='text-title' content='Actividad Reciente' size='text-pre-medium' styles_color='text-secundario' />
+                </div>
+                <div className={`flex ${styles.bottom}`}>
+                    <Layouts.recentActivity />
+                </div>
             </aside>
             <div className={styles.containerButton}>
                 <Components.button value='Nuevo Seguimiento' />

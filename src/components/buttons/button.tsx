@@ -1,4 +1,3 @@
-import Icon from '../icon/icon'
 import Text from '../typography/typography'
 import styles from './button.module.css'
 
@@ -7,15 +6,15 @@ interface Props {
     value?: string,
     icon?: string,
     className?: string,
-
+    disabled?: boolean
     onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const button = ({ type, value, icon, onClick }: Props) => {
+const button = ({ type, value, icon, disabled, onClick }: Props) => {
     return (
-        <button className={value ? styles.button : styles.iconButton} type={type || 'button'} onClick={onClick}>
+        <button className={`flex ${styles.button}`} type={type || 'button'} onClick={onClick} disabled={disabled || false}>
             {value && <Text type='h4' style_type='text-button' styles_color='text-terciario' content={value} />}
-            {icon && <Icon icon={icon} style_color='icon-blanco' />}
+            {icon && <i className={`${styles.icon} fi fi-br-${icon}`}></i>}
         </button>
     )
 }

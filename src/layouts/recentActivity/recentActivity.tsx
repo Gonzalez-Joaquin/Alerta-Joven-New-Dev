@@ -19,7 +19,7 @@ const recentActivity = () => {
                 </>
             )}
             {!loading && (
-                newArray.map(({ id, name, credential }) => <Components.cards.small individual={{ id, name, credential }} key={id} />)
+                newArray.map(({ id, name, credential }) => <Components.cards.small type='individual' data={{ id, title: name, desc: `${credential}` }} key={id} />)
             )}
         </div>
     )

@@ -30,7 +30,7 @@
   border: 1px solid var(--fuente-terciaria);
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
     rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    transition: var(--transition-2);
+  transition: var(--transition-2);
 }
 
 .button:is(:hover, :active, :focus) {

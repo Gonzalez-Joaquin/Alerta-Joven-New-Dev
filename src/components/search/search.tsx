@@ -10,7 +10,7 @@ const search = () => {
     }
 
     return (
-        <form className={styles.container} onSubmit={handleSubmit}>
+        <form className={`flex ${styles.container}`} onSubmit={handleSubmit}>
             <input type="text" name="search" id="search" autoComplete="off" className={`${styles.input} ${mode ? styles.active : styles.inactive}`} />
             <button type="reset" onClick={() => setMode(!mode)} className={`${styles.button} ${mode ? styles.crossActive : styles.crossInactive}`}>
                 {mode ? <Icon icon='cross' /> : <Icon icon='search' />}
