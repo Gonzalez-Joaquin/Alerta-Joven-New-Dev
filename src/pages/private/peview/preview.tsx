@@ -36,14 +36,16 @@ const preview = () => {
                     <PeopleProfile.information individual={individual} />
                 </div>
                 <div className={styles.container}>
-                    {courses !== undefined && <PeopleProfile.courses courses={courses} />}
-                    {courses === undefined || courses.length === 0 && <Components.text type='h3' style_type='text-button' content='No se encontro registro de cursos' styles_color='text-primario' />}
+                    {courses === undefined
+                        ? <Components.text type='h3' style_type='text-button' content='No se encontro registro de cursos' styles_color='text-primario' />
+                        : <PeopleProfile.courses courses={courses} />
+                    }
                 </div>
             </article>
             <article className={`flex ${styles.right}`}>
                 <div className={styles.container}>
                     {trackings !== undefined && <PeopleProfile.trackings trackings={trackings} />}
-                    {trackings === undefined || trackings.length === 0 && <Components.text type='h3' style_type='text-button' content='No se encontro seguimiento' styles_color='text-primario' />}
+                    {trackings === undefined && <Components.text type='h3' style_type='text-button' content='No se encontro seguimiento' styles_color='text-primario' />}
                 </div>
             </article>
         </section>

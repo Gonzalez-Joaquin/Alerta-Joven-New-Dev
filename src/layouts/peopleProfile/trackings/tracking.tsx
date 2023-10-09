@@ -14,16 +14,20 @@ const trackings = ({ trackings }: Props) => {
 
     return (
         <div className={`flex ${styles.container}`}>
-            {listOfTrackings().map(({ id, title, desc }) => <Components.cards.small type="tracking" data={{ id, title, desc }} key={id} />)}
-            <div className="flex" style={{ gap: '10px', justifyContent: 'flex-start', width: '100%' }}>
-
-                <Components.button value="Bajar" icon="angle-down" onClick={() => setCurrentPage(currentPage + 1)}
-                    disabled={currentPage + 4 < trackings.length ? false : true}
-                />
-                <Components.button value="Subir" icon="angle-up" onClick={() => setCurrentPage(currentPage - 1)}
-                    disabled={currentPage + 4 > trackings.length || currentPage !== 0 ? false : true}
-                />
+            <Components.text type='h3' style_type='text-title' content='Registro' />
+            <div className={`flex ${styles.cards}`}>
+                {listOfTrackings().map(({ id, title, desc }) => <Components.cards.small type="tracking" data={{ id, title, desc }} key={id} />)}
             </div>
+            {listOfTrackings().length > 4 && (
+                <div className={`flex ${styles.buttons}`}>
+                    <Components.button value="Bajar" icon="angle-down" onClick={() => setCurrentPage(currentPage + 1)}
+                        disabled={currentPage + 4 < trackings.length ? false : true}
+                    />
+                    <Components.button value="Subir" icon="angle-up" onClick={() => setCurrentPage(currentPage - 1)}
+                        disabled={currentPage + 4 > trackings.length || currentPage !== 0 ? false : true}
+                    />
+                </div>
+            )}
         </div>
     )
 }
