@@ -27,8 +27,12 @@ const courses = ({ courses }: Props) => {
             </div>
             {courses.length > 3 && (
                 <div className={`flex ${styles.sliderButtons}`}>
-                    <Components.button value='Anterior' onClick={() => setCurrentPage(currentPage - 1)} />
-                    <Components.button value='Siguiente' onClick={() => setCurrentPage(currentPage + 1)} />
+                    <Components.button value='Anterior' onClick={() => setCurrentPage(currentPage - 1)}
+                        disabled={currentPage - 1 >= 0 ? false : true}
+                    />
+                    <Components.button value='Siguiente' onClick={() => setCurrentPage(currentPage + 1)}
+                        disabled={currentPage + 3 < courses.length ? false : true}
+                    />
                 </div>
             )}
         </div>

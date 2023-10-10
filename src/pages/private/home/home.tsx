@@ -26,6 +26,7 @@ const Home = () => {
             <div className={styles.containerButton}>
                 <Components.button value='Nuevo Seguimiento' />
             </div>
+            <Layouts.PopUp.newTracking />
         </section>
     )
 }

@@ -1,7 +1,7 @@
 import styles from './input.module.css'
 
 interface Props {
-    type?: 'text' | 'number' | 'password' | 'email'
+    type?: 'text' | 'password' | 'email'
     name: string
     placeholder: string
     newValue: (value: string) => void

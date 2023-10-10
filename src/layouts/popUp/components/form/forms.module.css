@@ -1,0 +1,19 @@
+.form {
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.div {
+    width: 100%;
+    gap: 50px;
+}
+
+.buttons {
+    width: 100%;
+    gap: 20px;
+}

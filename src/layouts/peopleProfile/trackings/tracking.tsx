@@ -18,7 +18,7 @@ const trackings = ({ trackings }: Props) => {
             <div className={`flex ${styles.cards}`}>
                 {listOfTrackings().map(({ id, title, desc }) => <Components.cards.small type="tracking" data={{ id, title, desc }} key={id} />)}
             </div>
-            {listOfTrackings().length > 4 && (
+            {trackings.length > 4 && (
                 <div className={`flex ${styles.buttons}`}>
                     <Components.button value="Bajar" icon="angle-down" onClick={() => setCurrentPage(currentPage + 1)}
                         disabled={currentPage + 4 < trackings.length ? false : true}
