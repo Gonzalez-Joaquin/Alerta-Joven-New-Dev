@@ -35,8 +35,8 @@ const information = ({ individual }: Props) => {
                     </div>
                 </div>
                 <div className={`flex ${styles.buttons}`}>
-                    <Components.button value='Borrar' />
-                    <Components.button value='Editar' />
+                    <Components.button value='Borrar' disabled={true} />
+                    <Components.button value='Editar' disabled={true} />
                 </div>
             </div>
         </div>

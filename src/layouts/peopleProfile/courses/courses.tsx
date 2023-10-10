@@ -22,7 +22,7 @@ const courses = ({ courses }: Props) => {
             <div className={`flex ${styles.slider}`}>
                 {courses.length === 0 && <Components.text type='h3' style_type='text-button' content='No se encontro registro de cursos' styles_color='text-primario' />}
                 {
-                    getAllCourses().map(({ name, id, desc, endDate }) => <Components.cards.medium data={{ title: name, desc, endDate }} key={id} />)
+                    getAllCourses().map(({ name, id, desc, endDate }) => <Components.cards.medium data={{ id, title: name, desc, endDate }} key={id} />)
                 }
             </div>
             {courses.length > 3 && (

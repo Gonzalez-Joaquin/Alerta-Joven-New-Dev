@@ -1,9 +1,13 @@
+import { useState } from 'react'
 import * as Components from '../../../components'
 import * as Layouts from '../../../layouts'
 
 import styles from './home.module.css'
 
 const Home = () => {
+
+    const [newTrackingPopUp, setNewTrackingPopUp] = useState(false)
+
     return (
         <section className={`section flex ${styles.section}`}>
             <article className={`flex ${styles.article}`}>
@@ -24,9 +28,9 @@ const Home = () => {
                 </div>
             </aside>
             <div className={styles.containerButton}>
-                <Components.button value='Nuevo Seguimiento' />
+                <Components.button value='Nuevo Seguimiento' onClick={() => setNewTrackingPopUp(!newTrackingPopUp)} />
             </div>
-            <Layouts.PopUp.newTracking />
+            <Layouts.PopUp.newTracking popUpMode={newTrackingPopUp} setPopUpMode={mode => setNewTrackingPopUp(mode)} />
         </section>
     )
 }

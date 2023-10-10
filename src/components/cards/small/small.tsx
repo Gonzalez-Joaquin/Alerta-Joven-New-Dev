@@ -5,6 +5,8 @@ import Text from '../../typography/typography'
 import Button from '../../buttons/button'
 
 import styles from './small.module.css'
+import { useState } from 'react'
+import { PopUp } from '../../../layouts'
 
 interface Props {
     type: 'individual' | 'tracking'
@@ -17,6 +19,7 @@ interface Props {
 
 const small = ({ data, type }: Props) => {
     const { id, title, desc } = data
+    const [mode, setMode] = useState(false)
     const navigate = useNavigate()
     return (
         <div className={`flex ${styles.card}`}>
@@ -26,7 +29,12 @@ const small = ({ data, type }: Props) => {
             </div>
             <div className={`flex ${styles.button}`}>
                 {type === 'individual' && <Button value={'Ver más'} onClick={() => navigate(`/Private/${PrivateRoutes.PREVIEW}/${id}`, { replace: true })} />}
-                {type === 'tracking' && <Button value={'Ver más'} onClick={() => navigate(`/Private/${PrivateRoutes.PREVIEW}/${id}`, { replace: true })} />}
+                {type === 'tracking' && (
+                    <>
+                        <Button value={'Ver más'} onClick={() => setMode(!mode)} />
+                        <PopUp.trackingPreview id={id} mode={mode} setMode={mode => setMode(mode)} />
+                    </>
+                )}
             </div>
         </div>
     )

@@ -1,1 +1,1 @@
-export type FormSteps = 'individual' | 'tracking' | 'course' | 'end' 
+export type FormSteps = 'individual' | 'tracking' | 'end' 
