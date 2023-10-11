@@ -2,13 +2,23 @@ import { individual } from '../../../model/individual.model'
 import * as Components from '../../../components'
 
 import styles from './information.module.css'
+import alertaJovenAPI from '../../../api/alertaJovenAPI'
+import fetchIndividuals from '../../../redux/slices/individuals/thunk'
+import { useNavigate } from 'react-router-dom'
 
 interface Props {
     individual: individual
 }
 
 const information = ({ individual }: Props) => {
-    const { name, credential, birthDate, schoolFinished, asJob } = individual
+    const { name, credential, birthDate, schoolFinished, asJob, id } = individual
+    const navigate = useNavigate()
+
+    const handleClick = async () => {
+        await alertaJovenAPI.delete(`individuals/${id}`)
+        fetchIndividuals()
+        navigate('/', { replace: true })
+    }
 
     return (
         <div className={`flex ${styles.container}`}>
@@ -35,7 +45,7 @@ const information = ({ individual }: Props) => {
                     </div>
                 </div>
                 <div className={`flex ${styles.buttons}`}>
-                    <Components.button value='Borrar' disabled={true} />
+                    <Components.button value='Borrar' onClick={handleClick} />
                     <Components.button value='Editar' disabled={true} />
                 </div>
             </div>
