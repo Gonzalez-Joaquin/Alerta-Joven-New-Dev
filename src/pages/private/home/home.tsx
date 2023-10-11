@@ -7,16 +7,17 @@ import styles from './home.module.css'
 const Home = () => {
 
     const [newTrackingPopUp, setNewTrackingPopUp] = useState(false)
+    const [searchValue, setSearchValue] = useState('')
 
     return (
         <section className={`section flex ${styles.section}`}>
             <article className={`flex ${styles.article}`}>
                 <div className={`flex ${styles.top}`}>
                     <Components.text type='h2' style_type='text-title' content='Seguimientos' size='text-pre-medium' styles_color='text-secundario' />
-                    <Components.search />
+                    <Components.search searchValue={value => setSearchValue(value)} />
                 </div>
                 <div className={`flex ${styles.bottom}`}>
-                    <Layouts.peopleTracking />
+                    <Layouts.peopleTracking searchValue={searchValue} />
                 </div>
             </article>
             <aside className={`flex ${styles.aside}`}>

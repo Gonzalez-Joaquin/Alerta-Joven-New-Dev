@@ -1,9 +1,16 @@
+import { informationShow } from '../../help'
 import styles from '../styles.module.css'
 
-const secondPage = () => {
+interface Props {
+    value: informationShow
+}
+
+const secondPage = ({ value }: Props) => {
     return (
-        <article className={`flex ${styles.article}`}>
-            <div className={`flex ${styles.div}`}>uno</div>
+        <article className={`${styles.article} ${value === 'second' ? styles.true : styles.false}`}>
+            <div className={`flex ${styles.div}`}>
+
+            </div>
             <div className={`flex ${styles.div}`}>dos</div>
             <div className={`flex ${styles.div}`}>tres</div>
         </article>

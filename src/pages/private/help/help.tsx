@@ -1,4 +1,3 @@
-import { HelpProgressBar } from './components'
 import * as View from './views'
 
 import styles from './help.module.css'
@@ -12,17 +11,14 @@ const Home = () => {
 
     return (
         <section className={`flex ${styles.section}`}>
-            <HelpProgressBar />
             <div className={`flex ${styles.container}`}>
-                <article className={`flex ${styles.article}`}>
-                    hola como estas
-                </article>
-                <article className={`flex ${styles.slider}`}>
+                <View.aside value={infoShow} setValue={value => setInfoShow(value)} />
+                <div className={`flex ${styles.slider}`}>
                     <View.first value={infoShow} />
                     <View.second value={infoShow} />
                     <View.third value={infoShow} />
                     <View.foruth value={infoShow} />
-                </article>
+                </div>
             </div>
         </section>
     )

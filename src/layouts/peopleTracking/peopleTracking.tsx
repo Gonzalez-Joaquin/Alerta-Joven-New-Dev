@@ -2,23 +2,33 @@ import { useSelector } from 'react-redux'
 import * as Components from '../../components'
 import styles from './peopleTracking.module.css'
 import { RootState } from '../../redux/store'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { individual } from '../../model/individual.model'
+import searchByName from '../../helpers/search'
 
 // En el objeto de abajo se colocan los headers de la tabla
 
 const tableHeaders = ['Nombre', 'Documento', 'Nacimiento', 'Estudia', 'Trabaja']
 
-const peopleTracking = () => {
+interface Props {
+    searchValue: string
+}
+
+const peopleTracking = ({ searchValue }: Props) => {
     const { individuals } = useSelector((store: RootState) => store.individuals)
 
     const [currentPage, setCurrentPage] = useState(0)
-    const newArray = (nextValue?: number) => {
-        if (nextValue) {
-            return individuals.slice(currentPage, nextValue + 9)
-        } else {
-            return individuals.slice(currentPage, currentPage + 9)
-        }
-    }
+    const [searched, setSearched] = useState<individual[]>(individuals)
+
+    const newArray = () => searched.slice(currentPage, currentPage + 9)
+
+    useEffect(() => {
+        setSearched(searchByName(searchValue, individuals))
+    }, [searchValue])
+
+    useEffect(() => {
+        setSearched(individuals)
+    }, [individuals])
 
     return (
         <div className={styles.container}>
