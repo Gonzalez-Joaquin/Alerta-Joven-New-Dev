@@ -20,14 +20,22 @@
 .link,
 .active {
   position: relative;
-  background: var(--fondo);
+  background: var(--fondo-secundario);
   padding: 0.2em 0.7em;
   transition: ease 0.2s;
 }
 
+.link {
+  color: var(--fuente-secundaria);
+}
+
+.active {
+  color: var(--primario);
+}
+
 .link:is(:hover, :active),
 .active:is(:hover, :active) {
-  color: var(--fuente-secundaria);
+  color: var(--primario);
 }
 
 .link:hover {

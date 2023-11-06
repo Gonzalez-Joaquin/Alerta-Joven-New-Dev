@@ -20,8 +20,10 @@ const loginForm = () => {
 
         const data = await loginWidthEmailAndPassword(email, password)
 
-        dipatch(updateUser(data))
-        navigate('/', { replace: true })
+        if (data !== undefined) {
+            dipatch(updateUser(data))
+            navigate('/', { replace: true })
+        }
     }
 
     return (

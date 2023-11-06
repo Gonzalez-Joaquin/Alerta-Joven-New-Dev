@@ -4,6 +4,7 @@ interface Props {
     type?: 'text' | 'password' | 'email'
     name: string
     placeholder: string
+    moreInfo?: string
     newValue: (value: string) => void
 }
 

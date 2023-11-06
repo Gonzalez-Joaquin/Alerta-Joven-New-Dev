@@ -25,6 +25,7 @@ const preview = () => {
             setCourses(responseCourses.data)
             const responseTrakings = await alertaJovenAPI.get(`trakings/${id}`)
             setTrackings(responseTrakings.data)
+            console.log(responseTrakings.data)
         }
         fetchIndividual()
     }, [])

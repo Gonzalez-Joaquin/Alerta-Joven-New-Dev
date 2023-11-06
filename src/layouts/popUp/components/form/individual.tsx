@@ -32,11 +32,11 @@ const individual = ({ formStep, value, setPopUp }: Props) => {
         <form className={`flex ${styles.form} ${formStep === 'individual' ? styles.true : styles.false}`} onSubmit={handleSubmit}>
             <Components.text type='h3' style_type='text-title' content='Información personal' styles_color='text-secundario' />
             <div className={`flex ${styles.div}`}>
-                <Components.input placeholder='Nombre' name='newIndividualName' newValue={e => setName(e)} />
+                <Components.input placeholder='Nombre Completo' moreInfo='( Nombre, Apellido )' name='newIndividualName' newValue={e => setName(e)} />
                 <Components.input placeholder='Documento' name='newIndividualDocument' newValue={e => setDoc(+e)} />
             </div>
             <div className={`flex ${styles.div}`} style={{ maxWidth: '280px' }}>
-                <Components.input placeholder='Fecha de nacimiento:' name='newIndividualDate' newValue={e => setDate(e)} />
+                <Components.input placeholder='Fecha de nacimiento' moreInfo='( Año - Mes - Día )' name='newIndividualDate' newValue={e => setDate(e)} />
             </div>
             <div className={`flex ${styles.div}`}>
                 <Components.input placeholder='Escuela' name='newIndividualSchool' newValue={e => setSchool(e === 'si' ? true : false)} />

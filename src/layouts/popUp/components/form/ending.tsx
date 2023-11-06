@@ -1,7 +1,11 @@
+import { useDispatch } from 'react-redux'
 import * as Components from '../../../../components'
-import { FormSteps } from '../../../../types'
-import styles from './forms.module.css'
 
+import fetchIndividuals from '../../../../redux/slices/individuals/thunk'
+import { AppDisptach } from '../../../../redux/store'
+import { FormSteps } from '../../../../types'
+
+import styles from './forms.module.css'
 
 interface Props {
     formStep: FormSteps
@@ -11,6 +15,13 @@ interface Props {
 
 const ending = ({ formStep, value, setPopUp }: Props) => {
 
+    const dispatch = useDispatch<AppDisptach>()
+
+    const handleClick = () => {
+        setPopUp(false)
+        dispatch(fetchIndividuals())
+    }
+
     return (
         <div className={`flex ${styles.form} ${formStep === 'end' ? styles.true : styles.false}`}>
             <div className={`flex ${styles.ending}`}>
@@ -19,7 +30,7 @@ const ending = ({ formStep, value, setPopUp }: Props) => {
             </div>
             <div className={`flex ${styles.buttons}`}>
                 <Components.button value='Agregar otro' onClick={() => value('individual')} />
-                <Components.button value='Cerrar' onClick={() => setPopUp(false)} />
+                <Components.button value='Cerrar' onClick={() => handleClick()} />
             </div>
         </div>
     )
