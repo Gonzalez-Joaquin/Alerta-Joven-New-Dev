@@ -1,0 +1,13 @@
+.left,
+.right {
+    padding: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+.new {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
