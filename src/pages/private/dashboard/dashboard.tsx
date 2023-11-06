@@ -1,32 +1,43 @@
 import { useEffect, useState } from 'react'
 
-import * as Components from '../../../components'
-import styles from './dashboard.module.css'
+import { individual } from '../../../model/individual.model'
+import { tracking } from '../../../model/tracking.model'
 import alertaJovenAPI from '../../../api/alertaJovenAPI'
 import { user_model } from '../../../model/user.model'
+import { course } from '../../../model/course.model'
+import * as Components from '../../../components'
+import * as Layouts from '../../../layouts'
+
+import styles from './dashboard.module.css'
 
 const dashboard = () => {
 
     const [users, setUsers] = useState<user_model[]>([])
+    const [individuals, setIndividuals] = useState<individual[]>([])
+    const [trackings, setTrackings] = useState<tracking[]>([])
+    const [courses, setCourses] = useState<course[]>([])
 
     useEffect(() => {
         const fetchIndividual = async () => {
+            const responseIndividuals = await alertaJovenAPI.get(`individuals`)
+            setIndividuals(responseIndividuals.data)
             const responseUsers = await alertaJovenAPI.get(`users`)
             setUsers(responseUsers.data)
+            const responseTrackings = await alertaJovenAPI.get('trakings')
+            setTrackings(responseTrackings.data)
+            const responseCourses = await alertaJovenAPI('courses')
+            setCourses(responseCourses.data)
         }
         fetchIndividual()
     }, [])
 
     return (
         <section className="flex section">
-            <article className={styles.left}>
-                <Components.text type='h3' style_type='text-title' content='Panel administrativo' size='text-pre-medium' />
+            <article className={`flex ${styles.left}`}>
+                <Layouts.Dashboard.individuals individuals={individuals} trackings={trackings} courses={courses} />
             </article>
-            <article className={styles.right}>
-                <Components.text type='h3' style_type='text-title' content='Usuarios Recientes' size='text-pre-medium' />
-                <div className='flex' style={{ gap: '10px', flexDirection: 'column' }}>
-                    {users.map(({ id, name, permissions }) => <Components.cards.small type='individual' data={{ id, title: name, desc: permissions }} key={id} />)}
-                </div>
+            <article className={`flex ${styles.right}`}>
+                <Layouts.Dashboard.users users={users} />
             </article>
             <div className={styles.new}>
                 <Components.button value='Nuevo Usuario' />

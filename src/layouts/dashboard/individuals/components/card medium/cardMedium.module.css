@@ -1,0 +1,63 @@
+.card {
+    align-items: flex-start;
+    padding: .7em 1em;
+    width: 96%;
+    height: 100%;
+    background: var(--terciario);
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.left {
+    width: 100%;
+    height: 70%;
+}
+
+.bottom {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.shape {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.item {
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.right {
+    width: 100%;
+    height: 100%;
+}
+
+.barraContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.shapeBorder {
+    max-width: 25px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d8d8d8;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.shapeBorder>div {
+    width: 100%;
+    border-radius: 6px;
+}

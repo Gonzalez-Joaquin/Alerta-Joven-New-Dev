@@ -1,0 +1,37 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.stats {
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.stats>h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.statsContainer {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.stats2 {
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.stats2>h3 {
+    font-weight: 400;
+    margin-block: 10px;
+}

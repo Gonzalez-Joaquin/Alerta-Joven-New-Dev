@@ -1,7 +1,7 @@
 export { default as Header } from './header/header'
 export { default as recentActivity } from './recentActivity/recentActivity'
 export { default as peopleTracking } from './peopleTracking/peopleTracking'
-export { default as recentUsers } from './recentUsers/recentUsers'
 export * as PopUp from './popUp'
 export * as Forms from './forms'
 export * as PeopleProfile from './peopleProfile'
+export * as Dashboard from './dashboard'
